@@ -1,10 +1,11 @@
-# find and replace double-spaces
-sed -i '.bak' 's/\ \ /\ /g' $1
+# find and replace double, triple, etc. spaces
+find $1 -maxdepth 1 -type f -name "*.txt" -exec sed -i '.bak' -E 's/\ {2,}/\ /g' {} \;
 # find and replace leading spaces
-sed -i '.bak' 's/^\ //g' $1
+find $1 -maxdepth 1 -type f -name "*.txt" -exec sed -i '.bak' -E 's/^\ +//g' {} \;
 #find and replace trailing spaces
-sed -i '.bak' 's/\ $//g' $1
-# cleanup .bak files
-rm ${1}.bak
+find $1 -maxdepth 1 -type f -name "*.txt" -exec sed -i '.bak' -E 's/\ +$//g' {} \;
 
-echo $1 'cleaned up!'
+# cleanup .bak files
+find $1 -maxdepth 1 -type f -name "*.bak" -exec rm {} \;
+
+echo 'All text files in $1 despaced!'

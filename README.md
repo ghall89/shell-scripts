@@ -12,9 +12,9 @@ A tool to remove double-spaces and trailing spaces within text files.
 
 ### Instructions
 
-Run script in your terminal with the path to the text file you wish to "despace" as an argument.
+Run script in your terminal with the path to the folder that holds the text files you want to "despace".
 
-Example: `sh despacer.sh ~/Desktop/sample.txt`
+Example: `sh despacer.sh ~/Desktop/text`
 
 ## License
 
