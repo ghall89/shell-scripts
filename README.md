@@ -1,5 +1,7 @@
 # Shell Scripts
 
+![](https://img.shields.io/github/license/ghall89/shell-scripts?style=for-the-badge)
+
 A collection of shell scripts I wrote for various tasks. These scripts were written on MacOS, and I'm not sure if they'll work on other platforms without modification.
 
 ## Table of Contents
@@ -15,6 +17,8 @@ A tool to remove double-spaces and trailing spaces within text files.
 Run script in your terminal with the path to the folder that holds the text files you want to "despace".
 
 Example: `sh despacer.sh ~/Desktop/text`
+
+Note: For safety, this script will only modify text files at the root of any directory you choose, and will not go into subfolders. Though I don't suggest it unless you're absolutely 100% sure you know what you're doing, if you want to remove this limitation delete `-maxdepth 1` from all lines.
 
 ## License
 
